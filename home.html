@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Seller Page</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+  <header>
+    <section class="headertop">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="top-left">
+              <a href=""><i class="fas fa-mobile-alt"></i>Download App</i></a>
+            </div>
+          </div>
+
+          @auth
+          <form action="{{route('logout')}}" method="post">
+            @csrf
+            <button class="nav-link" type="submit">logout</button>
+          </form>
+          </li>
+          @else
+          <div class="col-lg-6 topRight">
+            <a href="{{route('login')}}">Login/</a>
+            <a href="{{route('lregister')}}">Register</a>
+            @endauth
+            <div class="socialIcon">
+              <a href=""><i class="fab fa-facebook-square"></i></a>
+              <a href=""><i class="fab fa-twitter-square"></i></a>
+              <a href=""><i class="fab fa-google-plus-square"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <nav class="navbar navbar-expand-lg headerNav">
+      <div class="container">
+        <a class="navbar-brand " href="#">
+          <span class="cst-font">MyShop</span>
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Category</a>
+            </li>
+          </ul>
+          <form class="d-flex searchForm">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          <div class="rightSide">
+            <a href=""><i class="fa fa-shopping-cart"></i></a>
+            <a href=""><i class="fa-regular fa-heart"></i></a>
+            <a href=""><i class="fa fa-user"></i></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!--Banner Section-->
+  <section class="sellerBanner">
+    <div class="container">
+      <div class="bannerContent">
+        <h1 class="cst-font">Ekeshta Store</h1>
+        <p>
+          Pathari-Sanischare 1,<br>
+          Morang,Nepal,<br> Mobile No. 9817365030
+        </p>
+      </div>
+    </div>
+  </section>
+  <!--Seller Content-->
+  <section class="sellerContent">
+    <div class="container-fluid">
+      <div class="row d-flex">
+        <div class="col-md-3">
+          <div class="leftSidebar">
+            <div id="according">
+              <h5 class="category">Product Category</h5>
+              <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Staples
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <ul class="categorySublist">
+                        <li class="categoryItem">
+                          <a href="">Dal & Pilses</a>
+                        </li>
+                        <li class="categoryItem">
+                          <a href="">Ghee & Edible Oils</a>
+                        </li>
+                        <li class="categoryItem">
+                          <a href="">Atta & Flours</a>
+                        </li>
+                        <li class="categoryItem">
+                          <a href="">Masala & Spices</a>
+                        </li>
+                        <li class="categoryItem">
+                          <a href="">Dryfruits & Nuts</a>
+                        </li>
+                        <li class="categoryItem">
+                          <a href="">Salt & Sugar</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Snacks-Biscuits
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <ul class="categorySublist">
+                        <li class="categoryItem">
+                          <a href="">Dal & Pilses</a>
+                        </li>
+                        <li class="categoryItem">
+                          <a href="">Ghee & Edible Oils</a>
+                        </li>
+                        <li class="categoryItem">
+                          <a href="">Atta & Flours</a>
+                        </li>
+                        <li class="categoryItem">
+                          <a href="">Masala & Spices</a>
+                        </li>
+                        <li class="categoryItem">
+                          <a href="">Dryfruits & Nuts</a>
+                        </li>
+                        <li class="categoryItem">
+                          <a href="">Salt & Sugar</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                      data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Beverages
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <ul class="categorySublist">
+                        <li class="categoryItem">
+                          <a href="">Dal & Pilses</a>
+                        </li>
+                        <li class="categoryItem">
+                          <a href="">Ghee & Edible Oils</a>
+                        </li>
+                        <li class="categoryItem">
+                          <a href="">Atta & Flours</a>
+                        </li>
+                        <li class="categoryItem">
+                          <a href="">Masala & Spices</a>
+                        </li>
+                        <li class="categoryItem">
+                          <a href="">Dryfruits & Nuts</a>
+                        </li>
+                        <li class="categoryItem">
+                          <a href="">Salt & Sugar</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="deliveryBanner">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="media d-flex align-items-center">
+                  <img src="delivery.jpg" alt="" class="image">
+                  <div class="media-body">
+                    <h6>Free Home Delivery</h6>
+                    <p>*for orders above<span><i class="fa-solid fa-rupee-sign">500</i></span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="media d-flex align-items-center">
+                  <img src="location.jpg" alt="" class="image">
+                  <div class="media-body">
+                    <h6>Delivery Location</h6>
+                    <p>upto <span>500 mtrs</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="media d-flex align-items-center">
+                  <img src="clock.jpg" alt="" class="image">
+                  <div class="media-body">
+                    <h6>Delivery between</h6>
+                    <p>10 Am to 8 PM</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row ProductThumb">
+              <div class="col-md-12">
+                <h5 class="categoryTitle pt-3">Dal & Spices</h5>
+              </div>
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="card">
+                  <div class="product-img">
+                    <img class="card-img-top" src="img.1 jpg.jpg" alt="image">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Aashirvaad Whole Atta</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="amount">
+                        <span><i class="fa-solid fa-rupee-sign">320</i></span>
+                        <span class="disabled-amount"><i class="fa-solid fa-rupee-sign">328</i></span>
+                      </div>
+                      <div>
+                        <select name="unit" id="weight">
+                          <option value="200">200</option>
+                          <option value="400">400</option>
+                          <option value="800">800</option>
+                        </select>
+
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="s-flex qty">
+                        <span id="dec">-</span>
+                        <input type="text" id="qty" value="1">
+                        <span id="inc">+</span>
+                      </div>
+                      <div class="add-cart">
+                        <a href="" class="btn btn-primary btn-sm">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="card">
+                  <div class="product-img">
+                    <img class="card-img-top" src="img.2 jpg.jpg" alt="image">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Aashirvaad Whole Atta</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="amount">
+                        <span><i class="fa-solid fa-rupee-sign">320</i></span>
+                        <span class="disabled-amount"><i class="fa-solid fa-rupee-sign">328</i></span>
+                      </div>
+                      <div>
+                        <select name="unit" id="weight">
+                          <option value="200">200</option>
+                          <option value="400">400</option>
+                          <option value="800">800</option>
+                        </select>
+
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="s-flex qty">
+                        <span id="dec">-</span>
+                        <input type="text" id="qty" value="1">
+                        <span id="inc">+</span>
+                      </div>
+                      <div class="add-cart">
+                        <a href="" class="btn btn-primary btn-sm">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="card">
+                  <div class="product-img">
+                    <img class="card-img-top" src="biscuit.jpg" alt="image">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Aashirvaad Whole Atta</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="amount">
+                        <span><i class="fa-solid fa-rupee-sign">320</i></span>
+                        <span class="disabled-amount"><i class="fa-solid fa-rupee-sign">328</i></span>
+                      </div>
+                      <div>
+                        <select name="unit" id="weight">
+                          <option value="200">200</option>
+                          <option value="400">400</option>
+                          <option value="800">800</option>
+                        </select>
+
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="s-flex qty">
+                        <span id="dec">-</span>
+                        <input type="text" id="qty" value="1">
+                        <span id="inc">+</span>
+                      </div>
+                      <div class="add-cart">
+                        <a href="" class="btn btn-primary btn-sm">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="card">
+                  <div class="product-img">
+                    <img class="card-img-top" src="img.1 jpg.jpg" alt="image">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Aashirvaad Whole Atta</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="amount">
+                        <span><i class="fa-solid fa-rupee-sign">320</i></span>
+                        <span class="disabled-amount"><i class="fa-solid fa-rupee-sign">328</i></span>
+                      </div>
+                      <div>
+                        <select name="unit" id="weight">
+                          <option value="200">200</option>
+                          <option value="400">400</option>
+                          <option value="800">800</option>
+                        </select>
+
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="s-flex qty">
+                        <span id="dec">-</span>
+                        <input type="text" id="qty" value="1">
+                        <span id="inc">+</span>
+                      </div>
+                      <div class="add-cart">
+                        <a href="" class="btn btn-primary btn-sm">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="card">
+                  <div class="product-img">
+                    <img class="card-img-top" src="img.1 jpg.jpg" alt="image">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Aashirvaad Whole Atta</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="amount">
+                        <span><i class="fa-solid fa-rupee-sign">320</i></span>
+                        <span class="disabled-amount"><i class="fa-solid fa-rupee-sign">328</i></span>
+                      </div>
+                      <div>
+                        <select name="unit" id="weight">
+                          <option value="200">200</option>
+                          <option value="400">400</option>
+                          <option value="800">800</option>
+                        </select>
+
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="s-flex qty">
+                        <span id="dec">-</span>
+                        <input type="text" id="qty" value="1">
+                        <span id="inc">+</span>
+                      </div>
+                      <div class="add-cart">
+                        <a href="" class="btn btn-primary btn-sm">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="card">
+                  <div class="product-img">
+                    <img class="card-img-top" src="img.1 jpg.jpg" alt="image">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Aashirvaad Whole Atta</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="amount">
+                        <span><i class="fa-solid fa-rupee-sign">320</i></span>
+                        <span class="disabled-amount"><i class="fa-solid fa-rupee-sign">328</i></span>
+                      </div>
+                      <div>
+                        <select name="unit" id="weight">
+                          <option value="200">200</option>
+                          <option value="400">400</option>
+                          <option value="800">800</option>
+                        </select>
+
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="s-flex qty">
+                        <span id="dec">-</span>
+                        <input type="text" id="qty" value="1">
+                        <span id="inc">+</span>
+                      </div>
+                      <div class="add-cart">
+                        <a href="" class="btn btn-primary btn-sm">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="card">
+                  <div class="product-img">
+                    <img class="card-img-top" src="img.1 jpg.jpg" alt="image">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Aashirvaad Whole Atta</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="amount">
+                        <span><i class="fa-solid fa-rupee-sign">320</i></span>
+                        <span class="disabled-amount"><i class="fa-solid fa-rupee-sign">328</i></span>
+                      </div>
+                      <div>
+                        <select name="unit" id="weight">
+                          <option value="200">200</option>
+                          <option value="400">400</option>
+                          <option value="800">800</option>
+                        </select>
+
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="s-flex qty">
+                        <span id="dec">-</span>
+                        <input type="text" id="qty" value="1">
+                        <span id="inc">+</span>
+                      </div>
+                      <div class="add-cart">
+                        <a href="" class="btn btn-primary btn-sm">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="card">
+                  <div class="product-img">
+                    <img class="card-img-top" src="img.1 jpg.jpg" alt="image">
+                  </div>
+                  <div class="card-body">
+                    <p class="card-title">Aashirvaad Whole Atta</p>
+                    <div class="d-flex align-items-center justify-content-between">
+                      <div class="amount">
+                        <span><i class="fa-solid fa-rupee-sign">320</i></span>
+                        <span class="disabled-amount"><i class="fa-solid fa-rupee-sign">328</i></span>
+                      </div>
+                      <div>
+                        <select name="unit" id="weight">
+                          <option value="200">200</option>
+                          <option value="400">400</option>
+                          <option value="800">800</option>
+                        </select>
+
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="s-flex qty">
+                        <span id="dec">-</span>
+                        <input type="text" id="qty" value="1">
+                        <span id="inc">+</span>
+                      </div>
+                      <div class="add-cart">
+                        <a href="" class="btn btn-primary btn-sm">Add to Cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
